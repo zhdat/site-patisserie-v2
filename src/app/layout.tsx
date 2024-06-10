@@ -1,3 +1,5 @@
+import { CartProvider } from "@/components/cartContext";
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -16,7 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${inter.className} font-sans`}>
+        <CartProvider>{children}</CartProvider>
+        <Toaster />
+      </body>
     </html>
   );
 }

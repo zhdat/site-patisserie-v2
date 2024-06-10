@@ -1,6 +1,5 @@
 "use client";
 
-import PropTypes from "prop-types";
 import { createContext, useContext, useState } from "react";
 
 interface CartItem {
@@ -94,8 +93,4 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
     </CartContext.Provider>
   );
-};
-
-CartProvider.propTypes = {
-  children: PropTypes.node.isRequired,
 };
